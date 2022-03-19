@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "sudokusolver.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
