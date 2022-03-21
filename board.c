@@ -29,11 +29,24 @@ int** createBoard(){
 }
 
 void printBoard(int** board){
+    printf("\n");
     for (size_t i = 0; i < 9; i++)
     {
         for (size_t j = 0; j < 9; j++)
         {
+            if (j == 0 && i ==0)
+            {
+                printf("------------------------\n");
+            }     
+            if (j % 3 == 0)
+            {
+                printf("| ");
+            } 
             printf("%d ", board[i][j]);
+            if (j == 8 && (i+1) % 3 == 0 && i > 0)
+            {
+                printf("\n------------------------");
+            }
         }
         printf("\n");
     }

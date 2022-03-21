@@ -1,25 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "sudokuSolver.h"
 
 int main()
 {
-    int** board;
-    board = createBoard();
-    //printBoard(board);
-    //int val = 1;
-    //changeval(&val);
-    //printf("%d\n", val);
+    int** board;    //empty Board
+    board = generateBoard();  //Generate random puzzle
 
-    int row, col;
-
-    //printf("%d\n", FindUnassignedLocation(board, &row, &col));
-    solveSudoku(board);
+    printf("Generating puzzle:\n");
     printBoard(board);
+
     if (verify_state(board))
-        printf("It is verified!");
+        printf("Puzzle generated\n");
     else
-        printf("It was not verifed");
+        printf("Error generating board");
+
+    printf("Solving puzzle: \n");
+    
+    if(solveSudoku2(board))
+        printBoard(board);
+    else
+        printf("Couldnt solve the board");
+        
     free(board);
     return 0;
 }

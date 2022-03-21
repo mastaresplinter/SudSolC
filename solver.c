@@ -111,9 +111,8 @@ int FindUnassignedLocation(int** board, int *row, int *col){
     return 0;
 }
 
-int solveSudoku(int** board){
+int solveSudoku2(int** board){
     int row, col;
-
     if(!FindUnassignedLocation(board, &row, &col))
         return 1;
 
@@ -123,7 +122,7 @@ int solveSudoku(int** board){
         {
             board[row][col] = num;
 
-            if (solveSudoku(board))
+            if (solveSudoku2(board))
             {
                 return 1;
             }
@@ -131,9 +130,4 @@ int solveSudoku(int** board){
         }
     }
     return 0;
-}
-
-void changeval(int* val){
-    *val = *val +10;
-    return;
 }
