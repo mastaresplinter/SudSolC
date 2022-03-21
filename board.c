@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "board.h"
+#include "sudokuSolver.h"
 
 int** createBoard(){
     int array[9][9] = {
@@ -18,7 +16,7 @@ int** createBoard(){
     int k, **board;
     board = malloc(9*sizeof(int *));
     for(k = 0 ; k < 9 ; k++)
-        board[k] = malloc(9*sizeof(int) );
+        board[k] = malloc(9*sizeof(int));
 
     for (size_t i = 0; i < 9; i++)
     {
